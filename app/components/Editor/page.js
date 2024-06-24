@@ -3,7 +3,7 @@
 
 import { useState, useEffect } from 'react';
 
-export default function Editor({ initialContent, onContentChange }) {
+export default function Editor({ initialContent, onChange }) {
   const [content, setContent] = useState(initialContent);
 
   useEffect(() => {
@@ -13,7 +13,7 @@ export default function Editor({ initialContent, onContentChange }) {
   const handleChange = (e) => {
     const newContent = e.target.value;
     setContent(newContent);
-    onContentChange(newContent); // Notify parent component about the change
+    onChange(newContent); // Notify parent component about the change
   };
 
   return (
